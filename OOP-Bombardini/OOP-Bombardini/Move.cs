@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OOP_Bombardini
 {
@@ -36,66 +32,49 @@ namespace OOP_Bombardini
             UPPERCUT, SUPERMANPUNCH,
             LOWDAMAGE, HANDLESHOT,
             HIGHDAMAGE, TEMPLESHOT,
-            THRUST,STAB,
-            TROW,GRAZEDSHOT,
+            THRUST, STAB,
+            TROW, GRAZEDSHOT,
             BODYSHOT, HEADSHOT
         }
 
-        private readonly string name;
-        private readonly int damage;
-        private readonly int failRatio; // 0 success 100 fail
-        private readonly int reloadTime;
+        private string Name { get; }
+        private int Damage { get;}
+        private int FailRatio { get; } // 0 success 100 fail
+        private int ReloadTime { get;}
 
         public enum MoveType
         {
             MELEE, RANGED
         }
 
-        readonly MoveType type;
+        readonly MoveType Type;
 
         // Create constructor with all parameters
-        private Move(String moveName, int moveDamage, int moveFailRatio, int moveReloadTime, MoveType moveType)
+        private Move(String name, int damage, int failRatio, int reloadTime, MoveType type)
         {
-            name = moveName;
-            damage = moveDamage;
-            failRatio = moveFailRatio;
-            reloadTime = moveReloadTime;
-            type = moveType;
-
-        }
-        public int GetDamage()
-        {
-            return damage;
-        }
-
-        public int GetFailRatio()
-        {
-            return failRatio;
-        }
-
-        public int GetReloadTime()
-        {
-            return reloadTime;
+            Name = name;
+            Damage = damage;
+            FailRatio = failRatio;
+            ReloadTime = reloadTime;
+            Type = type;
         }
 
         public MoveType GetMoveType()
         {
-            return type;
-        }
-
-        public String GetName()
-        {
-            return name;
+            return Type;
         }
 
         public bool IsUsable(int fightTurn, int lastUse)
         {
-            if (lastUse + reloadTime < fightTurn || lastUse == 0)
+            if (lastUse + ReloadTime < fightTurn || lastUse == 0)
             {
                 return true;
             }
             else
+            {
                 return false;
+
+            }
         }
 
         public bool TestFailure()
@@ -103,7 +82,7 @@ namespace OOP_Bombardini
             // random number (0 to 100) if it's >= than failRatio success(TRUE), else
             // fail(FALSE)
             Random random = new Random();
-            return random.Next(101) >= failRatio;
+            return random.Next(101) >= FailRatio;
         }
 
         private static Move GetRandomTypeMove(MoveType type)
