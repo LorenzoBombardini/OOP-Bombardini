@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OOP_Bombardini
 {
-    class WeaponFactory
+    public class WeaponFactory
     {
         public const float LEVEL1 = 1;
         public const float LEVEL2 = 2;
@@ -56,12 +54,12 @@ namespace OOP_Bombardini
             return weapon;
         }
 
-        public static Weapon createRandomRangedWeapon(String name, double damageMultiplier)
+        public static Weapon CreateRandomRangedWeapon(string name, double damageMultiplier)
         {
             return CreateWeapon(name, damageMultiplier, Weapon.WeaponType.RANGED);
         }
 
-        public static Weapon createRandomMeleeWeapon(String name, double damageMultiplier)
+        public static Weapon CreateRandomMeleeWeapon(string name, double damageMultiplier)
         {
             return CreateWeapon(name, damageMultiplier, Weapon.WeaponType.MELEE);
         }

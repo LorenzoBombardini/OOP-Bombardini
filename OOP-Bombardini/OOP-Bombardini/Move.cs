@@ -37,25 +37,45 @@ namespace OOP_Bombardini
             BODYSHOT, HEADSHOT
         }
 
-        private string Name { get; }
-        private int Damage { get;}
-        private int FailRatio { get; } // 0 success 100 fail
-        private int ReloadTime { get;}
+        private string _name;
+        public string Name
+        {
+            get => _name;
+            set => _name = value;
+        }
+
+        private int _damage;
+        public int Damage
+        {
+            get => _damage;
+            set => _damage = value;
+        }
+
+        private readonly int _failRatio;
+        public int FailRatio { get => _failRatio; } // 0 success 100 fail
+
+        private readonly int _reloadTime;
+        public int ReloadTime { get => _reloadTime; }
 
         public enum MoveType
         {
             MELEE, RANGED
         }
 
-        readonly MoveType Type;
+        private MoveType _type;
+        public MoveType Type
+        {
+            get => _type;
+            set => _type = value;
+        }
 
         // Create constructor with all parameters
         private Move(String name, int damage, int failRatio, int reloadTime, MoveType type)
         {
             Name = name;
             Damage = damage;
-            FailRatio = failRatio;
-            ReloadTime = reloadTime;
+            _failRatio = failRatio;
+            _reloadTime = reloadTime;
             Type = type;
         }
 

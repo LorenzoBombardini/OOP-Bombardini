@@ -4,12 +4,23 @@ using System.Linq;
 
 namespace OOP_Bombardini
 {
-    class Weapon
+    public class Weapon
     {
         public const int MOVE_LIST_SIZE = 4;
 
-        internal string Name { get; set; }
-        internal double DamageMultiplier { get; set; }
+        private string _name;
+        public string Name
+        {
+            get => _name;
+            set => _name = value;
+        }
+
+        private double _damageMultiplier;
+        public double DamageMultiplier
+        {
+            get => _damageMultiplier;
+            set => _damageMultiplier = value;
+        }
         internal List<Move> MoveList = new List<Move>();
 
         public enum WeaponType
@@ -17,12 +28,17 @@ namespace OOP_Bombardini
             MELEE, RANGED
         }
 
-        internal WeaponType Type { get; set; }
+        private WeaponType _type;
+        public WeaponType Type
+        {
+            get => _type;
+            set => _type = value;
+        }
         internal Weapon(String name, WeaponType type, double damageMultiplier, List<Move> moveList)
         {
             Name = name;
             DamageMultiplier = damageMultiplier;
-            Type = Type;
+            Type = type;
             SetMoveList(moveList);
         }
 

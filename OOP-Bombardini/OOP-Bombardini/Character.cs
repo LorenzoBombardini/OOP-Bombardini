@@ -1,16 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OOP_Bombardini
 {
-    class Character
+    public class Character
     {
-        internal string Name { get; set; }
-        internal int Hp { get; set; }
-        internal Weapon Weapon { get; set; }
+        private string _name;
+        public string Name
+        {
+            get => _name;
+            set => _name = value;
+        }
+
+        private int _hp;
+        public int Hp 
+        {
+            get => _hp;
+            set => _hp = value;
+        }
+
+        private Weapon _weapon;
+        public Weapon Weapon
+        {
+            get => _weapon;
+            set => _weapon = value;
+        }
 
         public Character(String name, int hp, Weapon weapon)
         {
@@ -18,11 +31,13 @@ namespace OOP_Bombardini
             Hp = hp;
             Weapon = weapon;
         }
-
-
+        public string GetName()
+        {
+            return Name;
+        }
     }
 
-    class EnemyCharacter : Character
+    public class EnemyCharacter : Character
     {
         internal Weapon DropWeapon { get; set; }
         public EnemyCharacter(Character character, Weapon dropWeapon) : base(character.Name, character.Hp, character.Weapon)
@@ -31,10 +46,11 @@ namespace OOP_Bombardini
         }
     }
 
-    class PlayerCharacter : Character
+    public class PlayerCharacter : Character
     {
         public PlayerCharacter(Character character) : base(character.Name, character.Hp, character.Weapon) { }
     }
+
 
 
 }
