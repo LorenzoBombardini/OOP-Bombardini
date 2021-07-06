@@ -1,0 +1,2 @@
+C:\Users\bomba\OOP-Bombardini\OOP-Bombardini\OOP-Bombardini-test\obj\Debug\OOP-Bombardini-test.csproj.AssemblyReference.cache
+C:\Users\bomba\OOP-Bombardini\OOP-Bombardini\OOP-Bombardini-test\obj\Debug\OOP-Bombardini-test.csproj.CoreCompileInputs.cache
