@@ -28,7 +28,7 @@ namespace OOP_Bombardini
         public static Weapon CreateWeapon(String name, double damageMultiplier, Weapon.WeaponType type)
         {
             Weapon weapon = new Weapon(name, 0);
-            List<Move> moveList = new List<Move>(Weapon.MOVE_LIST_SIZE);
+            List<Move> moveList = new List<Move>();
             int i = 0;
             Move move;
             do

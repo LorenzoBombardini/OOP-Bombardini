@@ -1,2 +1,7 @@
 C:\Users\bomba\OOP-Bombardini\OOP-Bombardini\OOP-Bombardini\obj\Debug\OOP-Bombardini.csproj.AssemblyReference.cache
 C:\Users\bomba\OOP-Bombardini\OOP-Bombardini\OOP-Bombardini\obj\Debug\OOP-Bombardini.csproj.CoreCompileInputs.cache
+C:\Users\bomba\OOP-Bombardini\OOP-Bombardini\OOP-Bombardini\bin\Debug\OOP-Bombardini.exe.config
+C:\Users\bomba\OOP-Bombardini\OOP-Bombardini\OOP-Bombardini\bin\Debug\OOP-Bombardini.exe
+C:\Users\bomba\OOP-Bombardini\OOP-Bombardini\OOP-Bombardini\bin\Debug\OOP-Bombardini.pdb
+C:\Users\bomba\OOP-Bombardini\OOP-Bombardini\OOP-Bombardini\obj\Debug\OOP-Bombardini.exe
+C:\Users\bomba\OOP-Bombardini\OOP-Bombardini\OOP-Bombardini\obj\Debug\OOP-Bombardini.pdb

@@ -6,6 +6,7 @@ namespace OOP_Bombardini
 {
     public class Fight
     {
+        public static void Main() { }
         private PlayerCharacter _player;
         public PlayerCharacter Player { get => _player; }
 
@@ -18,7 +19,7 @@ namespace OOP_Bombardini
         private Move enemyLastMove;
         public int TurnCount { get; set; }
 
-        private Dictionary<Character, Dictionary<Move, int>> mapCharactersMove ;
+        private Dictionary<Character, Dictionary<Move, int>> mapCharactersMove;
         private Dictionary<Move, int> mapMartyMove;
         private Dictionary<Move, int> mapEnemyMove;
 

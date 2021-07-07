@@ -23,13 +23,13 @@ namespace OOP_Bombardini.Tests
         [TestMethod()]
         public void GetRandomMeleeMoveTest()
         {
-            Assert.AreEqual(Move.GetRandomMeleeMove().Type, Move.MoveType.MELEE);
+            Assert.AreEqual(Move.MoveType.MELEE, Move.GetRandomMeleeMove().Type);
         }
 
         [TestMethod()]
         public void GetRandomRangedMoveTest()
         {
-            Assert.AreEqual(Move.GetRandomRangedMove().Type, Move.MoveType.RANGED);
+            Assert.AreEqual(Move.MoveType.RANGED, Move.GetRandomRangedMove().Type);
         }
     }
 }

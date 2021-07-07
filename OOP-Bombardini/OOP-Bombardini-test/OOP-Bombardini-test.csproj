@@ -50,7 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FightTests.cs" />
+    <Compile Include="MoveTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WeaponFactoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

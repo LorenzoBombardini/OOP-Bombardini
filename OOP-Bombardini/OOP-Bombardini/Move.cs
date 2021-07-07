@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace OOP_Bombardini
 {
     public class Move
     {
+
+        static Random random = new Random();
         // FIST, BRASS KNUCKLES MOVE
         public static readonly Move HOOK = new Move("Gancio", 5, 10, 0, MoveType.MELEE);
         public static readonly Move JAB = new Move("Diretto", 6, 20, 0, MoveType.MELEE);
@@ -25,18 +28,8 @@ namespace OOP_Bombardini
         public static readonly Move GRAZEDSHOT = new Move("Colpo di Striscio", 10, 20, 2, MoveType.RANGED);
         public static readonly Move BODYSHOT = new Move("Colpo al Corpo", 15, 30, 4, MoveType.RANGED);
         public static readonly Move HEADSHOT = new Move("Colpo alla Testa", 30, 70, 4, MoveType.RANGED);
-
-        public enum MoveSet
-        {
-            HOOK, JAB,
-            UPPERCUT, SUPERMANPUNCH,
-            LOWDAMAGE, HANDLESHOT,
-            HIGHDAMAGE, TEMPLESHOT,
-            THRUST, STAB,
-            TROW, GRAZEDSHOT,
-            BODYSHOT, HEADSHOT
-        }
-
+        private static readonly Move[] MoveSet = new Move[14] { HOOK, JAB, UPPERCUT, SUPERMANPUNCH, LOWDAMAGE, HANDLESHOT, HIGHDAMAGE, TEMPLESHOT, THRUST, STAB, TROW, GRAZEDSHOT, BODYSHOT, HEADSHOT };
+        
         private string _name;
         public string Name
         {
@@ -107,17 +100,13 @@ namespace OOP_Bombardini
 
         private static Move GetRandomTypeMove(MoveType type)
         {
-            Random random = new Random();
-            Array values = Enum.GetValues(typeof(MoveSet));
-            Move move = (Move)values.GetValue(random.Next(values.Length));
-            if (move.GetMoveType() != type)
+            Move move;
+            do
             {
-                return move;
-            }
-            else
-            {
-                return GetRandomTypeMove(type);
-            }
+                move = MoveSet[random.Next(MoveSet.Length)];
+            } while (move.Type != type);
+
+            return move;
         }
 
         public static Move GetRandomMeleeMove()

@@ -27,13 +27,6 @@ namespace OOP_Bombardini.Tests
         }
 
         [TestMethod()]
-        public void SetWeaponMoveTest()
-        {
-            weaponTest = WeaponFactory.SetWeaponMove(weaponTest, Move.UPPERCUT, Move.HOOK, Move.JAB, Move.SUPERMANPUNCH);
-            Assert.AreEqual(moveList, weaponTest.GetMoveList());
-        }
-
-        [TestMethod()]
         public void CreateWeaponTest()
         {
             weaponTest = WeaponFactory.CreateWeapon(weaponTest.Name, weaponTest.DamageMultiplier, weaponTest.Type);
@@ -46,7 +39,7 @@ namespace OOP_Bombardini.Tests
             weaponTest = WeaponFactory.CreateRandomMeleeWeapon(weaponTest.Name, weaponTest.DamageMultiplier);
             CheckDuplicateItemsInMoveList();
             // Check if the items of moveList are all melee MOVE
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < weaponTest.GetMoveList().Count; i++)
             {
                 Assert.AreEqual(weaponTest.GetMoveList()[i].Type, Move.MoveType.MELEE);
             }
@@ -58,17 +51,17 @@ namespace OOP_Bombardini.Tests
             weaponTest = WeaponFactory.CreateRandomRangedWeapon(weaponTest.Name, weaponTest.DamageMultiplier);
             CheckDuplicateItemsInMoveList();
             // Check if the items of moveList are all melee MOVE
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < weaponTest.GetMoveList().Count; i++)
             {
                 Assert.AreEqual(weaponTest.GetMoveList()[i].Type, Move.MoveType.RANGED);
             }
         }
         private void CheckDuplicateItemsInMoveList()
         {
-            weaponTest.GetMoveList().
-            for (int i = 0; i < 4; i++)
+            //weaponTest.GetMoveList().
+            for (int i = 0; i < weaponTest.GetMoveList().Count; i++)
             {
-                for (int j = i + 1; j < 4; j++)
+                for (int j = i + 1; j < weaponTest.GetMoveList().Count - i; j++)
                 {
                     Assert.AreNotEqual(weaponTest.GetMoveList()[i], weaponTest.GetMoveList()[j]);
                 }
